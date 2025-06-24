@@ -28,7 +28,9 @@ export default function CartPage() {
   return (
     <div className="min-h-screen pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-bold mb-8">Your Cart ({totalItems} {totalItems === 1 ? 'item' : 'items'})</h1>
+        <h1 className="text-4xl font-bold mb-8">
+          Your Cart ({totalItems} {totalItems === 1 ? "item" : "items"})
+        </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Cart Items */}
@@ -51,14 +53,23 @@ export default function CartPage() {
                         <h3>
                           <Link href={`/product/${item.id}`}>{item.name}</Link>
                         </h3>
-                        <p className="ml-4">₹{(item.price * item.quantity).toLocaleString('en-IN')}</p>
+                        <p className="ml-4">
+                          $
+                          {(item.price * item.quantity).toLocaleString("en-IN")}
+                        </p>
                       </div>
-                      <p className="mt-1 text-sm text-gray-500">{item.category}</p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        {item.category}
+                      </p>
                       {item.selectedColor && (
-                        <p className="mt-1 text-sm text-gray-500">Color: {item.selectedColor}</p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          Color: {item.selectedColor}
+                        </p>
                       )}
                       {item.selectedSize && (
-                        <p className="mt-1 text-sm text-gray-500">Size: {item.selectedSize}</p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          Size: {item.selectedSize}
+                        </p>
                       )}
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
@@ -84,10 +95,14 @@ export default function CartPage() {
           <div className="lg:col-span-1 bg-gray-100 p-6 rounded-lg">
             <h2 className="text-lg font-bold mb-4">Order Summary</h2>
             <div className="flex justify-between text-base font-medium text-gray-900 mb-4">
-              <p>Subtotal ({totalItems} {totalItems === 1 ? 'item' : 'items'})</p>
-              <p>₹{totalAmount.toLocaleString('en-IN')}</p>
+              <p>
+                Subtotal ({totalItems} {totalItems === 1 ? "item" : "items"})
+              </p>
+              <p>${totalAmount.toLocaleString("en-IN")}</p>
             </div>
-            <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+            <p className="mt-0.5 text-sm text-gray-500">
+              Shipping and taxes calculated at checkout.
+            </p>
             <div className="mt-6">
               <button
                 onClick={clearCart}
@@ -98,7 +113,7 @@ export default function CartPage() {
             </div>
             <div className="mt-6 flex justify-center text-sm text-center text-gray-500">
               <p>
-                or{' '}
+                or{" "}
                 <Link
                   href="/"
                   className="font-medium text-black hover:text-gray-600"

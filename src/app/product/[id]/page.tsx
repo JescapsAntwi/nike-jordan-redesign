@@ -65,17 +65,23 @@ export default function ProductDetailPage() {
             className="space-y-6"
           >
             <p className="text-gray-700 text-lg">{product.description}</p>
-            <p className="text-3xl font-bold text-black">₹{product.price.toLocaleString('en-IN')}</p>
+            <p className="text-3xl font-bold text-black">
+              ${product.price.toLocaleString("en-IN")}
+            </p>
 
             <div>
               <h3 className="text-lg font-semibold mb-2">Available Colors:</h3>
               <div className="flex gap-2">
-                {product.colorOptions.map(color => (
+                {product.colorOptions.map((color) => (
                   <button
                     key={color}
                     onClick={() => setSelectedColor(color)}
                     className={`px-4 py-2 border rounded-full text-sm transition-colors duration-200
-                    ${selectedColor === color ? 'bg-black text-white border-black' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+                    ${
+                      selectedColor === color
+                        ? "bg-black text-white border-black"
+                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    }`}
                   >
                     {color}
                   </button>
@@ -86,12 +92,16 @@ export default function ProductDetailPage() {
             <div>
               <h3 className="text-lg font-semibold mb-2">Available Sizes:</h3>
               <div className="flex gap-2 flex-wrap">
-                {product.availableSizes.map(size => (
+                {product.availableSizes.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
                     className={`px-4 py-2 border rounded-full text-sm transition-colors duration-200
-                    ${selectedSize === size ? 'bg-black text-white border-black' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+                    ${
+                      selectedSize === size
+                        ? "bg-black text-white border-black"
+                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    }`}
                   >
                     {size}
                   </button>
@@ -117,7 +127,7 @@ export default function ProductDetailPage() {
             <div>
               <h3 className="text-lg font-semibold mb-2">Materials:</h3>
               <ul className="list-disc list-inside text-gray-700">
-                {product.materials.map(material => (
+                {product.materials.map((material) => (
                   <li key={material}>{material}</li>
                 ))}
               </ul>
@@ -126,7 +136,7 @@ export default function ProductDetailPage() {
             <div>
               <h3 className="text-lg font-semibold mb-2">Features:</h3>
               <ul className="list-disc list-inside text-gray-700">
-                {product.features.map(feature => (
+                {product.features.map((feature) => (
                   <li key={feature}>{feature}</li>
                 ))}
               </ul>
