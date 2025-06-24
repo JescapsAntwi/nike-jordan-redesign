@@ -1,6 +1,6 @@
 # Nike Redesign - E-Commerce Website
 
-![Project Banner](screenshott.png) <!-- Replace with your actual banner image -->
+![Project Banner](/screenshott.png) <!-- Replace with your actual banner image -->
 
 A modern redesign of the Nike e-commerce website built with Next.js, TypeScript, Tailwind CSS, and Firebase. This project features a responsive design, product catalog, authentication, and more.
 
